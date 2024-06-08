@@ -8,7 +8,6 @@ pipeline{
         stage('Prepare') {
             steps {
                 script {
-                    // Run the command to configure Java alternatives
                     sh "echo '1' | sudo alternatives --config java"
                 }
             }
