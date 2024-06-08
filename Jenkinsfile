@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-  PATH = "$(PATH):${getTerraformpath()}"
+  PATH = "${PATH}:${getTerraformpath()}"
 }
 
     stages {
