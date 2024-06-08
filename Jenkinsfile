@@ -4,14 +4,14 @@ pipeline{
   PATH = "$(PATH):${getTerraformpath()}"
 }
 
-    // stages {
-    //     stage('Prepare') {
-    //         steps {
-    //             script {
-    //                 sh "echo '1' | sudo alternatives --config java"
-    //             }
-    //         }
-    //     }
+    stages {
+        stage('Prepare') {
+            steps {
+                script {
+                    sh "echo '1' | sudo alternatives --config java"
+                }
+            }
+        }
     stages{
         stage('Terraform init and apply -dev'){
             steps {
