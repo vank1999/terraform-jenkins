@@ -3,6 +3,16 @@ pipeline{
     environment {
   PATH = "$(PATH):${getTerraformpath()}"
 }
+
+    stages {
+        stage('Prepare') {
+            steps {
+                script {
+                    // Run the command to configure Java alternatives
+                    sh "echo '1' | sudo alternatives --config java"
+                }
+            }
+        }
     stages{
         stage('Terraform init and apply -dev'){
             steps {
